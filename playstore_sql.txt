@@ -1,0 +1,29 @@
+1)select App from mytable where rating=(select Max(rating) from mytable);
+
+2) select App,Reviews,Installs from mytable where rating=(select Max(rating) from mytable);
+
+3)select App,SUM(Reviews),Category from mytable Group By App Order by Count(Reviews) DESC LIMIT 1;
+
+4) select SUM(Price) as "Total Revenue in dollars" FROM mytable;
+
+5)select Category,SUM(Installs) from mytable Group By Category Order by Count(Installs) DESC LIMIT 1;
+
+6)select Genres from mytable Group By Genres Order by Count(App) DESC LIMIT 1;
+
+7) select distinct(App) ,Installs from mytable where Category="GAME" Order by Installs desc;
+
+8)select App from mytable where Android_Ver= "4.0.3 and up";
+
+9)select Count(App) from mytable where Type="Free";
+
+     select Count(App) from mytable where Type="Paid";
+
+10)select App from mytable where Reviews=(select Max(Reviews) from mytable where Category="DATING");
+
+12) select Translated_Review from mytable_reviews where App="ASUS SuperNote" AND Sentiment_Polarity=1 AND Sentiment_Subjectivity=1;
+
+13)select Translated_Review from mytable_reviews where App="Abs Training-Burn belly fat" AND Sentiment="Neutral";
+
+14) select Translated_Review,Sentiment_Polarity,Sentiment_Subjectivity from mytable_reviews where App="Adobe Acrobat Reader" AND Sentiment="Negative";
+
+  
